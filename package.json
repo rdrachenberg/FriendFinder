@@ -1,0 +1,28 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "this will be a dating app",
+  "main": "friends.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdrachenberg/FriendFinder.git"
+  },
+  "keywords": [
+    "friendfinder"
+  ],
+  "author": "Ryan Drachenberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdrachenberg/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/rdrachenberg/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7",
+    "save": "^2.3.2"
+  }
+}
