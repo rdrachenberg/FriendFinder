@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Friend Finder Tables</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- main container -->
+    <div class="container">
+    <!-- jumbotron setup -->
+    <div class="jumbotron">
+        <h1 class="text-center">
+            <span class="glyphicon glyphicon-fire"></span>Friend Matches</h1>
+        <br>
+
+        <div class="text-center">
+            <a href="../public/survey.html">
+                <button type="button" class="btn btn-lg btn-danger">
+                    <span class="glyphicon glyphicon-credit-card"></span>New Survey</button>
+            </a>
+            <a href="/">
+                <button type="button" class="btn btn-lg btn-default">
+                    <span class="glyphicon glyphicon-home">Home</span>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- Current Tables in Use -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Current Matches</h4>
+                </div>
+                <div class="panel-body" id="tableSection">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/tables">API Table Link</a>
+                <a href="https://github.com/rdrachenberg/FriendFinder">GitHub Repo</a>
+            </p>
+        </div>
+    </footer>
+    </body>
+    <script type="text/javascript">
+    var express = require("express")
+    var app = express();
+            function runTableQuery(app) {
+        // get the location of the current root (dynamic)
+            var currentURL = window.location.origin;
+
+            // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+            $.ajax({ url: currentURL + "/api/tables", method: "GET" })
+                .then(function (tableData) {
+
+                    // Here we are logging the URL so we have access to it for troubleshooting
+                    console.log("------------------------------------");
+                    console.log("URL: " + currentURL + "/api/tables");
+                    console.log("------------------------------------");
+
+                    // Here we then log the NYTData to console, where it will show up as an object.
+                    console.log(tableData);
+                    console.log("------------------------------------");
+
+                    // Loop through and display each of the customers
+                    for (var i = 0; i < tableData.length; i++) {
+
+                        // Create the HTML Well (Section) and Add the table content for each reserved table
+                        var tableSection = $("<div>");
+                        tableSection.addClass("well");
+                        tableSection.attr("id", "tableWell-" + i + 1);
+                        $("#tableSection").append(tableSection);
+
+                        var tableNumber = i + 1;
+
+
+                        // Then display the remaining fields in the HTML (Section Name, Date, URL)
+                        $("#tableWell-" + i + 1).append("<h2><span class='label label-primary'>" + tableNumber + "</span> | " + tableData[i].customerID + "</h2>");
+                    };
+                });
+                runTableQuery();
+        };
+        
+        console.log( "This is the runTableQuery function" + runTableQuery());
+        module.exports = runTableQuery;
+    </script>
+</html>
