@@ -1,0 +1,12 @@
+.modal {
+    text-align: center;
+}
+
+.modal-dialog {
+    display: inline-block;
+    width: auto;
+}
+
+.img-responsive {
+    max-height: calc(100vh - 225px);
+}

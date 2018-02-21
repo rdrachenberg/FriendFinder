@@ -1,150 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Survey Page</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
-  <body>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- start main conainter and jumbotron -->
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center">
-                <span class="glyphicon glyphicon-fire"></span> Friend Finder ;-)</h1>
-                    <hr>
-                        <h2 class="text-center">Take a quick survey</h2>
-                    <br>
-                <div class="text-center">
-                    <a href="/tables">
-                        <button type="button" class="btn btn-lg btn-primary">
-                            <span class="glyphicon glyphicon-list-alt"></span> View Friends </button>
-                    </a>
-                    <a href="/">
-                        <button type="button" class="btn btn-lg btn-default">
-                            <span class="glyphicon glyphicon-home">Another button</span>
-                        </button>
-                    </a>
+    <div class="row">
+  <div class="container">
+    <!-- Home page jumbotron -->
+    <section class="jumbotron">
+      <h1>
+        <i class="fa fab fa-flipboard" color=#f44d ></i> Friend Finder app</h1>
+      <hr>
+        <h2>Survey Questions</h2>
+    </section>
+    <!-- Modal -->
+    <div id="resultsModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">
+                        <strong>Your Most Compatible Match</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="currentUsersName"></h2>
+                    <p>
+                        <img id="currentUsersPhoto" class='img-responsive' src="" />
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- Survey -->
+    <div class="container">
+        <h3>
+            <strong>About You</strong>
+        </h3>
+        <h4>What's your Name :
+            <input type="text" name="" id="name">
+        </h4>
         
-            <div class="row">
-                <div class="col-lg-12">
+        <h4>Upload in Awesome Pic : 
+            <input type="file" name="" id="photo" pattern="/dir/">
+        </h4>
         
-                    <!-- Reservation Page -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">Painless Survey</h4>
-                        </div>
-                        <div class="panel-body">
-         <!-- routeName: "Ahmed", name: "Ahmed", photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        role: "user", scores: -->
-                            <form role="form" id=tableSelection>
+        <h4>Please select one :  
+        <select data-placeholder="" id="sex">
+            <option value=" "></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        </h4>
+        <hr>
+        <h3>
+  
+            <h4>I have big goals in life!</h4>
+            <select data-placeholder=" " id="question1" class="validate">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
         
-                                <div class="form-group">
-                                    <label for="user-name">Name</label>
-                                    <input type="text" class="form-control" id="user-name">
-                                </div>
+           
         
-                                <div class="form-group">
-                                    <label for="user-phone">Photo upload needs to go here</label>
-                                    <input type="text" class="form-control" id="user-phone">
-                                </div>
+        <h4>I like to feel close to other people.</h4>
+        <select data-placeholder=" " id="question2" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
         
-                                <div class="form-group" visibility: hidden>
-                                    <label for="user-role">User Role</label>
-                                    <input type="text" class="form-control" id="user-role">
-                                </div>
+        <h4>I like to listen to other people talk about their feelings.</h4>
+        <select data-placeholder=" " id="question3" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
         
-                                <div class="form-group">
-                                    <label for="user-unique-id">Unique ID</label>
-                                    <input type="text" class="form-control" id="user-unique-id">
-                                </div>
-                                <!-- start user questions -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like coffee? </label>
-                                    <input type="text" class="form-control" id="coffee-id">
-                                </div>
-                                 <!-- question #2 -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like beer? </label>
-                                    <input type="text" class="form-control" id="beer-id">
-                                </div>
-                                <!-- question #3 -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like liquor? </label>
-                                    <input type="text" class="form-control" id="liquor-id">
-                                </div>
-                                <!-- question #4 -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like long walks on the beach? </label>
-                                    <input type="text" class="form-control" id="beach-id">
-                                </div>
-                                <!-- question #5-->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do you like to go to the movies? </label>
-                                    <input type="text" class="form-control" id="movies-id">
-                                </div>
-                                <!-- question #6 -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like to hike? </label>
-                                    <input type="text" class="form-control" id="beer-id">
-                                </div>
-                                <!-- question #7-->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like long walks on the beach? </label>
-                                    <input type="text" class="form-control" id="beer-id">
-                                </div>
-                                <!-- question #8-->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like long walks on the beach? </label>
-                                    <input type="text" class="form-control" id="beer-id">
-                                </div>
-                                <!-- question #9 -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like long walks on the beach? </label>
-                                    <input type="text" class="form-control" id="beer-id">
-                                </div>
-                                <!-- question #10 -->
-                                <div class="form-group">
-                                    <label for="user-unique-id">Do You like long walks on the beach? </label>
-                                    <input type="text" class="form-control" id="beer-id">
-                                </div>
-                                
-        
-                                <button type="submit" class="btn btn-primary submit">Submit</button>
-                            </form>
-        
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-        
-        
+        <h4>Expression of emotion makes me feel close to another person.</h4>
+        <select data-placeholder=" " id="question4" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+       
+        <h4>I want to feel close to people to whom I am attracted.</h4>
+        <select data-placeholder=" " id="question5" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+       
+        <h4>Intimate relationships bring me great satisfaction.</h4>
+        <select data-placeholder=" " id="question6" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+      
+        <h4>I search for close intimate relationships. </h4>
+        <select data-placeholder=" " id="question7" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+       
+        <h4>It is important to me to form close relationships. </h4>
+        <select data-placeholder=" " id="question8" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+     
+        <h4>Being honest and open with another person makes me feel closer to that person. </h4>
+        <select data-placeholder=" " id="question9" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+      
+        <h4>Being open and intimate with another person usually makes me feel good.</h4>
+        <select data-placeholder=" " id="question10" class="validate">
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <button type="submit" class="btn btn-primary btn-lg btn-block " id="submit">
+            <i class="glyphicon glyphicon-envelope " aria-hidden="true "></i>Submit</button>
+        <hr>
             <footer class="footer">
                 <div class="container">
                     <p>
-                        <a href="/api/tables">API Table Link</a> 
+                        <a href="/api/friends">API Table Link</a>
+                        <i class="fas fa-table" href="/api/friends"></i>
+                        <a href="#">   |    |   </a>
                         <a href="https://github.com/rdrachenberg/FriendFinder">GitHub Repo</a>
+                        <i class="fab fa-github-square" href="https://github.com/rdrachenberg/FriendFinder"></i>
                     </p>
                 </div>
             </footer>
-        
-        </div>
+            </div>
     </div>
+    <!-- Survey Javascript -->
+    <!-- Call the api to save the new information and search for a matching friend. Open a modal when a friend is found. -->
+    <script type="text/javascript ">
+    $('#submit').on("click ", function() {
 
+
+    	// Function to check all survery questions answered
+        function validateSurvey() {
+            var valid = true;
+
+            // Verify name
+            var name = $('#name').val();
+            if(name === ''){
+                valid=false;
+            }
+
+            // // Verify photo url
+            // var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+            // var photoUrl = $('#photo').val();
+            // if((!regex .test(photoUrl))) {
+            // 	valid = true;
+            // }
+
+            // Verify sex
+            var sex = $('#sex').val();
+            if(sex != 'male' && sex != 'female'){
+                valid=false;
+            }
+
+            // Verify all other fields
+            $('.validate').each(function() {
+                    console.log($(this).val());
+                if($(this).val() === ""){
+                    valid = false;
+                }
+            });
+            return valid;
+        }
+
+        if (validateSurvey() === true) {
+            var friendInput = {
+                name: $('#name').val(),
+                photo: $('#photo').val(),
+                sex: $('#sex').val(),
+                scores: [
+                    $("#question1 ").val(),
+                    $("#question2 ").val(),
+                    $("#question3 ").val(),
+                    $("#question4 ").val(),
+                    $("#question5 ").val(),
+                    $("#question6 ").val(),
+                    $("#question7 ").val(),
+                    $("#question8 ").val(),
+                    $("#question9 ").val(),
+                    $("#question10 ").val()
+                ]
+            }
+            var currentURL = window.location.origin;
+            $.post(currentURL + "/api/friends ", friendInput, function(data) {
+                $("#currentUsersName ").text(data.name);
+                $('#currentUsersPhoto').attr("src", data.photo);
+                // Show the modal with the current database match
+                $("#resultsModal ").modal('toggle');
+            })
+        } else {
+            alert("Please make sure you filled in all the questions.");
+        }
+        return false;
+    });
+    </script>
 </body>
+
 </html>
-
-
 

@@ -1,39 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>The Friendly FriendFinder app</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> The Friend Finder </title>
+  <!-- set up bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT"
+    crossorigin="anonymous">
+    <!-- jQuery set up -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- set up bootstrap cdn -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+    <!-- set up bootstrap font awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
-  <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- main container -->
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Friend Finder ;-)</h1>
-        <h2>Answer a few basic questions</h2>
-        <h2>See who matches you</h2>
-        <div class="text-center">
-          <a href="../public/survey.html">
-            <button type="button" class="btn btn-lg btn-danger">
-            <span class="glyphicon glyphicon-credit-card"></span>New Survey</button>
-          </a>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+  <div class="container">
+    <!-- Home page jumbotron -->
+    <section class="jumbotron">
+      <h1>
+        <i class="fa fab fa-flipboard" color=#f44d ></i> Friend Finder app</h1>
+      <hr>
+      <h2>Answer a few simple questions. </h2>
+      <h3>Then we will run our compatibility matcher!</h3>
+      <br />
+      <a href="./survey.html">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-list-alt"></span> Go to Survey
+        </button>
+      </a>
+    </section>
+    <!-- Home page footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          <a href="/api/friends">API Table Link</a>
+          <i class="fas fa-table" href="/api/friends"></i>
+          <a href="#"> | | </a>
+          <a href="https://github.com/rdrachenberg/FriendFinder">GitHub Repo</a>
+          <i class="fab fa-github-square" href="https://github.com/rdrachenberg/FriendFinder"></i>
+        </p>
       </div>
-    </div>
-
-  <img src="./Images/friendlyGirl.jpg" alt="Two Tattoed Hands">
-  <script type="text/javascript">
-    $(function () {
-    });
-  </script>
-  <script src="js/server.js"></script>
-  </body>
+    </footer>
+  </div>
+</body>
 </html>
