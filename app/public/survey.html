@@ -190,10 +190,9 @@
             </footer>
             </div>
     </div>
-    <!-- animate logo -->
+    <!-- animate logo and text- id= #compatibility and #about you -->
     <script>
         $(".logo").hover(function () {
-
                 $(this).stop().animate({ fontSize: '100px' });
                 $(this).hide(3000);
             });
@@ -206,11 +205,10 @@
     </script> 
     <script>
         $("#aboutYou").hover(function () {
-
                 $(this).hide(2800);
             });
     </script> 
-   
+   <!-- end text animation function -->
     <!-- on click  Javascript -->
     <!-- API call to match compatibility. Then open the result in a modal. -->
     <script type="text/javascript ">
@@ -247,16 +245,7 @@
                 photo: $('#photo').val(),
                 sex: $('#sex').val(),
                 scores: [
-                    $("#question1 ").val(),
-                    $("#question2 ").val(),
-                    $("#question3 ").val(),
-                    $("#question4 ").val(),
-                    $("#question5 ").val(),
-                    $("#question6 ").val(),
-                    $("#question7 ").val(),
-                    $("#question8 ").val(),
-                    $("#question9 ").val(),
-                    $("#question10 ").val()
+                    $("#question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8, #question9, #question10").val()
                 ]
             }
             // set a variable to handle url request from whatever the origin of the request come from.
