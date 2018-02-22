@@ -9,11 +9,10 @@ var app = express();
 // var waitListData = require("../data/waitinglistData");
 
 // ===============================================================================
-// ROUTING
-// ===============================================================================
 
+// create a module to be used by server.js
 module.exports = function (app) {
-    
+    // ROUTING
     app.get("/api/friends", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/tables.html"));
         res.json(friendsData);
@@ -34,9 +33,9 @@ module.exports = function (app) {
         for (i = 0; i < friendsData.length; i++) {
 
             if (requestBody.sex != friendsData[i].sex) {
-                for (j = 0; j < requestBody.scores.length; j++) {
+                for (k = 0; k < requestBody.scores.length; k++) {
 
-                    currentUserScore = currentUserScore + Math.abs(friendsData[i].scores[j] - requestBody.scores[j]);
+                    currentUserScore = currentUserScore + Math.abs(friendsData[i].scores[k] - requestBody.scores[k]);
                 }
                 if (currentUserScore <= newUserScore) {
                     newUser = i;

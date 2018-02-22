@@ -21,14 +21,136 @@
   <div class="container">
     <!-- Home page jumbotron -->
     <section class="jumbotron">
-      <h1>
+      <h1 class="logo">
           <!-- add fontawesome logo -->
-        <i class="fa fab fa-flipboard" color=#f44d ></i> Friend Finder app</h1>
+        <i class="fa fab fa-flipboard" color=#f44d></i> Friend Finder app</h1>
       <hr>
-        <h2>Survey Questions</h2>
+        <h2 id="compatibility">Compatibility Questions</h2>
+        <!-- Questions -->
+        <div class="container">
+            <h3 id="aboutYou">
+                <strong>About You</strong>
+            </h3>
+            <h4>What's your Name :
+                <input type="text" name="" id="name">
+            </h4>
+        
+            <h4>Upload in Awesome Pic :
+                <input type="file" name="" id="photo" pattern="/dir/">
+            </h4>
+        
+            <h4>Please select one :
+                <select data-placeholder="" id="sex">
+                    <option value=" "></option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </h4>
+            <hr>
+            <h3>
+                <h4>I have big goals in life!</h4>
+                <select data-placeholder=" " id="question1" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+
+                <h4>I like to feel close to other people.</h4>
+                <select data-placeholder=" " id="question2" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>Being open and intimate is fantastic!</h4>
+                <select data-placeholder=" " id="question3" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>I think coffee is great.</h4>
+                <select data-placeholder=" " id="question4" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>I really like beer.</h4>
+                <select data-placeholder=" " id="question5" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>I like Intimate relationships.</h4>
+                <select data-placeholder=" " id="question6" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>I search for close intimate relationships. </h4>
+                <select data-placeholder=" " id="question7" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>I like long walks on the beach.</h4>
+                <select data-placeholder=" " id="question8" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+        
+                <h4>Open communiction is critical.</h4>
+                <select data-placeholder=" " id="question9" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Disagree Strongly)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+
+                <h4>I love to hear about other peoples feelings.</h4>
+                <select data-placeholder=" " id="question10" class="validate">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </h3>
     </section>
     <!-- Modal -->
-    <div id="resultsModal" class="modal" role="dialog">
+    <div id="returnModal" class="modal" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -50,130 +172,7 @@
             </div>
         </div>
     </div>
-    <!-- Survey -->
-    <div class="container">
-        <h3>
-            <strong>About You</strong>
-        </h3>
-        <h4>What's your Name :
-            <input type="text" name="" id="name">
-        </h4>
-        
-        <h4>Upload in Awesome Pic : 
-            <input type="file" name="" id="photo" pattern="/dir/">
-        </h4>
-        
-        <h4>Please select one :  
-            <select data-placeholder="" id="sex">
-                <option value=" "></option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-        </h4>
-        <hr>
-        <h3>
-            <h4>I have big goals in life!</h4>
-                <select data-placeholder=" " id="question1" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-        
-           
-        
-            <h4>I like to feel close to other people.</h4>
-                <select data-placeholder=" " id="question2" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-        
-            <h4>I like to listen to other people talk about their feelings.</h4>
-                <select data-placeholder=" " id="question3" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-        
-            <h4>Expression of emotion makes me feel close to another person.</h4>
-                <select data-placeholder=" " id="question4" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-       
-            <h4>I want to feel close to people to whom I am attracted.</h4>
-                <select data-placeholder=" " id="question5" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-       
-            <h4>Intimate relationships bring me great satisfaction.</h4>
-                <select data-placeholder=" " id="question6" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-      
-            <h4>I search for close intimate relationships. </h4>
-                <select data-placeholder=" " id="question7" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-       
-            <h4>It is important to me to form close relationships. </h4>
-                <select data-placeholder=" " id="question8" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-     
-            <h4>Being honest and open with another person makes me feel closer to that person. </h4>
-                <select data-placeholder=" " id="question9" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-      
-            <h4>Being open and intimate with another person usually makes me feel good.</h4>
-                <select data-placeholder=" " id="question10" class="validate">
-                    <option value=""></option>
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                </select>
-        </h3>
+    
         <hr>
         <button type="submit" class="btn btn-primary btn-lg btn-block " id="submit">
             <i class="glyphicon glyphicon-envelope " aria-hidden="true "></i>Submit</button>
@@ -191,8 +190,29 @@
             </footer>
             </div>
     </div>
-    <!-- Survey Javascript -->
-    <!-- Call the api to save the new information and search for a matching friend. Open a modal when a friend is found. -->
+    <!-- animate logo -->
+    <script>
+        $(".logo").hover(function () {
+
+                $(this).stop().animate({ fontSize: '100px' });
+                $(this).hide(3000);
+            });
+    </script> 
+    <script>
+        $("#compatibility").hover(function () {
+
+                $(this).hide(3000);
+            });
+    </script> 
+    <script>
+        $("#aboutYou").hover(function () {
+
+                $(this).hide(2800);
+            });
+    </script> 
+   
+    <!-- on click  Javascript -->
+    <!-- API call to match compatibility. Then open the result in a modal. -->
     <script type="text/javascript ">
     $('#submit').on("click ", function() {
     	// Function to check all survery questions answered
@@ -246,7 +266,7 @@
                 $("#currentUsersName ").text(data.name);
                 $('#currentUsersPhoto').attr("src", data.photo);
                 // Show the modal with the current most compatible database match
-                $("#resultsModal ").modal('toggle');
+                $("#returnModal ").modal('toggle');
             })
         } else {
             // ask the user to make sure they filled in all of the data fields 
