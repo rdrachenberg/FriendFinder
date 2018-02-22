@@ -38,8 +38,11 @@
     <!-- animate button id= #buttonSurvey-->
     <script>
       $("#buttonSurvey").hover(function () {
-        $(this).stop().animate({ fontSize: '50px' });
-      });
+         $(this).stop().animate({ fontSize: '50px' });
+      },
+        function () {
+          $(this).stop().animate({ fontSize: '23px' }, 1800)
+        });
     </script>
     <!-- animate logo and text- id= #compatibility and #about you -->
     <script>
