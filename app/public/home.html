@@ -23,18 +23,29 @@
   <div class="container">
     <!-- Home page jumbotron -->
     <section class="jumbotron">
-      <h1>
+      <h1 class="logo">
         <i class="fa fab fa-flipboard" color=#f44d ></i> Friend Finder app</h1>
       <hr>
       <h2>Answer a few simple questions. </h2>
       <h3>Then we will run our compatibility matcher!</h3>
       <br />
       <a href="./survey.html">
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" id="buttonSurvey">
           <span class="glyphicon glyphicon-list-alt"></span> Go to Survey
         </button>
       </a>
     </section>
+    <!-- animate logo and text- id= #compatibility and #about you -->
+    <script>
+      $("#buttonSurvey").hover(function () {
+        $(this).stop().animate({ fontSize: '50px' });
+      });
+    </script>
+    <script>
+      $(".logo").hover(function () {
+        $(this).stop().animate({ fontSize: '100px' });
+      });
+    </script>
     <!-- Home page footer -->
     <footer class="footer">
       <div class="container">
