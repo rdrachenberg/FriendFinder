@@ -1,2 +1,3 @@
 node_modules
-snipps.js
+*snipps.js
+*.DS_Store
