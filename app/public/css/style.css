@@ -10,3 +10,25 @@
 .img-responsive {
     max-height: calc(100vh - 225px);
 }
+
+.jumbotron {
+        background: url("../../Images/friendlyTattoo.jpg") no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    
+#submit {
+    background-color: darkred;   
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    color: #050;
+    font: bold 84% 'trebuchet ms', helvetica, sans-serif;
+    background-color: #fed;
+    border: 1px solid;
+    border-color: #696 #363 #363 #696;
+}
