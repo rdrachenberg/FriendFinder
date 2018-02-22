@@ -26,7 +26,7 @@ FriendFinder
   - package.json
   - server.js
 
-
+# User compatibility
 User's most compatible friend guide:
 Each users answers will go in a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
 Then compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the totalDifference.
