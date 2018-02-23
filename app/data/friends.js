@@ -5,15 +5,15 @@ var friendsArray = [
         photo: "https://images-production.global.ssl.fastly.net/uploads/photos/file/272906/amanda-taylor.png?auto=compress&crop=top&fit=clip&h=500&q=55&w=698",
         role: "user",
         scores: [
-            5,
             1,
-            4,
-            4,
-            5,
+            1,
+            1,
+            3,
+            1,
             1,
             2,
-            5,
-            4,
+            1,
+            1,
             1
         ]
     },
@@ -23,15 +23,15 @@ var friendsArray = [
         photo: "https://i1.wp.com/s3-ap-southeast-2.amazonaws.com/sporteluxe-wp/wp-content/uploads/sites/13/2016/11/dewy-skin.png?fit=1068%2C812&ssl=1",
         role: "user",
         scores: [
-            5,
+            1,
             1,
             4,
-            4,
+            5,
             5,
             1,
             2,
-            5,
-            4,
+            3,
+            2,
             1
         ]
     },
@@ -41,16 +41,16 @@ var friendsArray = [
         photo: "http://cmzone.vzbqbxhynotw9ion96xv.netdna-cdn.com/wp-content/uploads/2017/04/Vienna-Kendall.jpg",
         role: "user",
         scores: [
-            5,
+            1,
             1,
             4,
-            4,
-            5,
+            3,
+            3,
             1,
             2,
-            5,
             4,
-            1
+            4,
+            3
         ]
     },
     {

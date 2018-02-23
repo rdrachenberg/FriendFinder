@@ -35,11 +35,11 @@
                 <input type="text" name="" id="name">
             </h4>
         
-            <h4>Upload in Awesome Pic :
+            <h4>Upload an Awesome Pic :
                 <input type="file" name="" id="photo" pattern="/dir/">
             </h4>
         
-            <h4>Please select one :
+            <h4>Select one :
                 <select data-placeholder="" id="sex">
                     <option value=" "></option>
                     <option value="male">Male</option>
@@ -175,7 +175,8 @@
     
         <hr>
         <button type="submit" class="btn btn-primary btn-lg btn-block " id="submit">
-            <i class="glyphicon glyphicon-envelope" aria-hidden="true "></i>Submit</button>
+            <i class="glyphicon glyphicon-envelope"></i>         Submit 
+        </button>
         <hr>
             <footer class="footer">
                 <div class="container">
@@ -193,53 +194,33 @@
     <!-- animate logo and text- id= #compatibility and #about you -->
     <script>
         $(".logo").hover(function () {
-                $(this).stop().animate({ fontSize: '100px' });
-                $(this).hide(3000);
-            });
-    </script> 
-    <script>
+            $(this).stop().animate({ fontSize: '100px' }).hide(1500);
+        });
         $("#compatibility").hover(function () {
-
-                $(this).hide(3000);
-            });
-    </script> 
-    <script>
+            $(this).hide(1500);
+        });
         $("#aboutYou").hover(function () {
-                $(this).hide(2800);
-            });
+            $(this).fadeToggle(1000).fadeToggle(3000);
+        });
     </script> 
-    <script>
-        
-            // $(this).toggleClass('showhidenew'); 
-        
-    </script>
-   <!-- end text animation function -->
-    <!-- on click  Javascript -->
+    <!-- end text animation function -->
     <!-- API call to match compatibility. Then open the result in a modal. -->
     <script type="text/javascript ">
-        $('#submit').on("click ", function() {
-            function replaceGlyphicon(){
-            $(this).removeClass(".glyphicon glyphicon-envelope aria-hidden= true");
-            $(this).addClass(".glyphicon glyphicon-okmyclass aria-hidden= true");
-            console.log("click function working");
-            };
-            
+        $('#submit').on("click ", function() { 
+            console.log("this button is clicked ")       
     	// Function to check all survery questions answered
-        function validateQuestions() {
+            function validateQuestions() {
             var valid = true;
-
             // Verify that the name has a value 
             var name = $('#name').val();
             if(name === ''){
                 valid=false;
             }
-
             // Verify the user is Male of Female 
             var sex = $('#sex').val();
             if(sex != 'male' && sex != 'female'){
                 valid=false;
             }
-
             // validate all other fields to make sure there is an input
             $('.validate').each(function() {
                     console.log($(this).val());
@@ -256,7 +237,7 @@
                 photo: $('#photo').val(),
                 sex: $('#sex').val(),
                 scores: [
-                    $("#question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8, #question9, #question10").val()
+                    $("#question1").val(), $("#question2").val(), $("#question3").val(), $('#question4').val(), $("#question5").val(), $('#question6').val(), $("#question7").val(), $('#question8').val()
                 ]
             }
             // set a variable to handle url request from whatever the origin of the request come from.
@@ -264,6 +245,7 @@
             var currentURL = window.location.origin;
             $.post(currentURL + "/api/friends ", friendInput, function(data) {
                 $("#currentUsersName ").text(data.name);
+                //grab the photo of the most compatible database friend match.
                 $('#currentUsersPhoto').attr("src", data.photo);
                 // Show the modal with the current most compatible database match
                 $("#returnModal ").modal('toggle');
