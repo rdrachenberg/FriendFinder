@@ -175,7 +175,7 @@
     
         <hr>
         <button type="submit" class="btn btn-primary btn-lg btn-block " id="submit">
-            <i class="glyphicon glyphicon-envelope " aria-hidden="true "></i>Submit</button>
+            <i class="glyphicon glyphicon-envelope" aria-hidden="true "></i>Submit</button>
         <hr>
             <footer class="footer">
                 <div class="container">
@@ -208,11 +208,22 @@
                 $(this).hide(2800);
             });
     </script> 
+    <script>
+        
+            // $(this).toggleClass('showhidenew'); 
+        
+    </script>
    <!-- end text animation function -->
     <!-- on click  Javascript -->
     <!-- API call to match compatibility. Then open the result in a modal. -->
     <script type="text/javascript ">
-    $('#submit').on("click ", function() {
+        $('#submit').on("click ", function() {
+            function replaceGlyphicon(){
+            $(this).removeClass(".glyphicon glyphicon-envelope aria-hidden= true");
+            $(this).addClass(".glyphicon glyphicon-okmyclass aria-hidden= true");
+            console.log("click function working");
+            };
+            
     	// Function to check all survery questions answered
         function validateQuestions() {
             var valid = true;
