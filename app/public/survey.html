@@ -149,10 +149,10 @@
                 </select>
             </h3>
     </section>
-    <!-- Modal -->
+    <!-- Main Modal -->
     <div id="returnModal" class="modal" role="dialog">
         <div class="modal-dialog">
-            <!-- Modal content-->
+            <!-- Main Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -172,8 +172,29 @@
             </div>
         </div>
     </div>
-    
         <hr>
+        <!-- additional error modal -->
+        <div class="modal fade" id="submitError">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="modal-title">   Please Check Your Answers</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <h4 class="errorText">Make sure that you filled in all of the questions.</h4>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <button type="submit" class="btn btn-primary btn-lg btn-block " id="submit">
             <i class="glyphicon glyphicon-envelope"></i>         Submit 
         </button>
@@ -251,8 +272,8 @@
                 $("#returnModal ").modal('toggle');
             })
         } else {
-            // ask the user to make sure they filled in all of the data fields 
-            alert("Please make sure you filled in all the questions.");
+            // launch a modal that asks the user to make sure they filled in all of the data fields 
+            $("#submitError").modal('toggle');
         }
         return false;
     });
