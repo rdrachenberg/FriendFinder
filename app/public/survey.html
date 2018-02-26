@@ -147,10 +147,24 @@
                     <option value="4">4</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
+                <h4>I love to hear about other peoples feelings.</h4>
+                <select data-placeholder=" " id="question11" class="validateB">
+                    <option></option>
+                </select>
             </h3>
     </section>
     <script>
-        $("<select></select>", { <option value =""> </option> }).appendTo(".validate")
+       function addOptions() {
+           var options = ["1", "2", "3", "4", "5"];
+            //loop through the length of the animals array
+            var select = $(".validateB");
+           for (i = 1; i <= 5; i++) {
+               select.options[select.options.length] = new Option(i, i);
+
+           }; 
+        };
+        // executes the addOptions function
+        addOptions();
     </script>
     <!-- Main Modal -->
     <div id="returnModal" class="modal" role="dialog">
