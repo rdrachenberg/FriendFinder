@@ -10,7 +10,7 @@ A compatibility-based "FriendFinder" application -- basically a dating app. This
 - node.JS
 - Express to handle routing. 
 - App Deployment on Heroku
-  - [Heroku!](https://friend-finder---.herokuapp.com/)
+  - [Heroku!](https://friend-finder-5503.herokuapp.com/)
 
 ## File Structure 
 FriendFinder
